@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<cmath>
+
+#define LEN 0.45
+#define GRAV 9.8
+#define PI 3.1415
+
+double velocity(double angle)
+{
+    return 2*sqrt(GRAV*LEN)*sin((angle*PI)/360);
+}
+
+int main()
+{
+    std::array<std::array<double, 5>, 3>angle_array{{4.75, 4.5, 4.75, 5, 4.75},{8, 7.75, 7.5, 7.5, 7,75},{11, 11.5, 11.5, 12, 11.5}};
+    for(int i = 5; i <= 15; i += 5)
+    for(double a : angle_array[i/5-1])
+        printf("%i-V0: %f\t%f-V1: %f\n", i, velocity(i), a, velocity(a));
+}
