@@ -17,7 +17,7 @@ struct ErrorOberbeck
     double deltaInertiaG;
     double deltaFrictionForce;
 
-    void calcTime(std::vector<double> time);
+    void calcTime(std::vector<double> &time);
     void calcAcceleration(double t, double h); 
     void calcAngleAcceleration(double a, double r);
     void calcForceMoment(double m, double r, double a);

@@ -1195,6 +1195,7 @@ CMakeFiles/physic-labs.dir/src/calc.cpp.o: /home/UwU/programming/physics_lab/src
   /usr/include/c++/15.1.1/cmath \
   /usr/include/c++/15.1.1/compare \
   /usr/include/c++/15.1.1/concepts \
+  /usr/include/c++/15.1.1/cstdarg \
   /usr/include/c++/15.1.1/cstddef \
   /usr/include/c++/15.1.1/debug/assertions.h \
   /usr/include/c++/15.1.1/debug/debug.h \
@@ -1236,6 +1237,7 @@ CMakeFiles/physic-labs.dir/src/calc.cpp.o: /home/UwU/programming/physics_lab/src
   /usr/include/sys/cdefs.h \
   /usr/include/sys/select.h \
   /usr/include/sys/types.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h
 
 CMakeFiles/physic-labs.dir/src/main.cpp.o: /home/UwU/programming/physics_lab/src/main.cpp \
@@ -1662,6 +1664,10 @@ CMakeFiles/physic-labs.dir/src/Work2/ErrorOberbeck.cpp.o:
 
 /usr/include/bits/uintn-identity.h:
 
+/usr/include/bits/stdint-uintn.h:
+
+/usr/include/asm/errno.h:
+
 /usr/include/c++/15.1.1/bit:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/libgcc.a:
@@ -1739,8 +1745,6 @@ CMakeFiles/physic-labs.dir/src/Work2/ErrorOberbeck.cpp.o:
 /usr/include/bits/atomic_wide_counter.h:
 
 /usr/include/bits/iscanonical.h:
-
-/usr/include/c++/15.1.1/string_view:
 
 /usr/include/bits/flt-eval-method.h:
 
@@ -2074,10 +2078,6 @@ CMakeFiles/physic-labs.dir/src/Work2/CalculatedDataOberbeck.cpp.o:
 
 /usr/include/c++/15.1.1/system_error:
 
-/usr/include/asm/errno.h:
-
-/usr/include/bits/stdint-uintn.h:
-
 /usr/include/bits/types/__fpos_t.h:
 
 /usr/include/c++/15.1.1/tr1/beta_function.tcc:
@@ -2207,3 +2207,7 @@ CMakeFiles/physic-labs.dir/src/Work2/CalculatedDataOberbeck.cpp.o:
 /usr/include/c++/15.1.1/tuple:
 
 /home/UwU/programming/physics_lab/include/work3/ErrorPendulum.h:
+
+/usr/include/c++/15.1.1/string_view:
+
+/usr/include/c++/15.1.1/cstdarg:

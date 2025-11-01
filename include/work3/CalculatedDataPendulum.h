@@ -11,7 +11,7 @@ struct CalculatedDataPendulum
     double k;
     double gk;
 
-    void calcAverageTime(std::vector<double> time);
+    void calcAverageTime(std::vector<double> &time);
     void calcPeriod(double shkaloebonen, double time);
     void calcPeriod(double shkaloebonen);
     void calcGravity(double length);

@@ -5,6 +5,9 @@
 class calcData
 {
 public:
-    static double average(std::vector<double> data);
+    static double average(std::vector<double> &data);
     static double roundTo(double base, int n);
+    static double coeffA(std::vector<double> &x, std::vector<double> &y);
+    static double coeffB(std::vector<double> &x, std::vector<double> &y);
+    static double sum(size_t count, ...);
 };

@@ -4,7 +4,7 @@
 
 #include <cmath>
 
-void ErrorPendulum::calcTime(std::vector<double> time)
+void ErrorPendulum::calcTime(std::vector<double> &time)
 {
     size_t number = time.size();
 

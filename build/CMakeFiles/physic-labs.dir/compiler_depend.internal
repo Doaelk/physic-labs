@@ -1202,6 +1202,7 @@ CMakeFiles/physic-labs.dir/src/calc.cpp.o
  /usr/include/c++/15.1.1/cmath
  /usr/include/c++/15.1.1/compare
  /usr/include/c++/15.1.1/concepts
+ /usr/include/c++/15.1.1/cstdarg
  /usr/include/c++/15.1.1/cstddef
  /usr/include/c++/15.1.1/debug/assertions.h
  /usr/include/c++/15.1.1/debug/debug.h
@@ -1243,6 +1244,7 @@ CMakeFiles/physic-labs.dir/src/calc.cpp.o
  /usr/include/sys/cdefs.h
  /usr/include/sys/select.h
  /usr/include/sys/types.h
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h
 
 CMakeFiles/physic-labs.dir/src/main.cpp.o

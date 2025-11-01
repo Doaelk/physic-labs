@@ -4,7 +4,7 @@
 
 #include <iostream>
 
-void CalculatedDataOberbeck::calcAverageTime(std::vector<double> time)
+void CalculatedDataOberbeck::calcAverageTime(std::vector<double> &time)
 {
     averageTime = 0;
 

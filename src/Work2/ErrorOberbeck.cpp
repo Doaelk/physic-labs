@@ -5,7 +5,7 @@
 
 //#define TESTACC
 
-void ErrorOberbeck::calcTime(std::vector<double> time)
+void ErrorOberbeck::calcTime(std::vector<double> &time)
 {
     size_t number = time.size();
 

@@ -14,7 +14,7 @@ struct ErrorPendulum
     double deltaK;
     double deltaGK;
 
-    void calcTime(std::vector<double> time);
+    void calcTime(std::vector<double> &time);
     void calcPeriod(double shkaloebonen);
     void calcPeriod(double shkaloebonen, double time);
     void calcGravity(double period, double length);

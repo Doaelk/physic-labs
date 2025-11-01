@@ -13,7 +13,7 @@ struct CalculatedDataOberbeck
     double inertiaG;
     double frictionForce;
 
-    void calcAverageTime(std::vector<double> time);
+    void calcAverageTime(std::vector<double> &time);
     void calcAcceleration(double h); 
     void calcAngleAcceleration(double r);
     void calcForceMoment(double m, double r);

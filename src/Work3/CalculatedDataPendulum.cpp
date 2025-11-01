@@ -4,7 +4,7 @@
 
 #include <cmath>
 
-void CalculatedDataPendulum::calcAverageTime(std::vector<double> time)
+void CalculatedDataPendulum::calcAverageTime(std::vector<double> &time)
 {
     averTime = calcData::average(time); 
 }

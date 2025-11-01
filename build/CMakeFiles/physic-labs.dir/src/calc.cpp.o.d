@@ -75,6 +75,8 @@ CMakeFiles/physic-labs.dir/src/calc.cpp.o: \
  /usr/include/c++/15.1.1/tr1/poly_hermite.tcc \
  /usr/include/c++/15.1.1/tr1/poly_laguerre.tcc \
  /usr/include/c++/15.1.1/tr1/riemann_zeta.tcc \
+ /usr/include/c++/15.1.1/cstdarg \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h \
  /home/UwU/programming/physics_lab/include/calc.h \
  /usr/include/c++/15.1.1/vector /usr/include/c++/15.1.1/bits/allocator.h \
  /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++allocator.h \
