@@ -18,10 +18,10 @@ void ErrorPendulum::calcTime(std::vector<double> &time)
 
     double randomTimeError = sqrt(sum/(number*(number-1)));
 
-    deltaTime = sqrt(pow(randomTimeError, 2)+pow(systemTimeError, 2));
+    deltaTime = sqrt(pow(randomTimeError, 2)+pow(constants::systemTimeError, 2));
 }
 
-void ErrorPendulum::calcPeriod(double shkaloebonen) { calcPeriod(shkaloebonen, systemTimeError); }
+void ErrorPendulum::calcPeriod(double shkaloebonen) { calcPeriod(shkaloebonen, constants::systemTimeError); }
 
 void ErrorPendulum::calcPeriod(double shkaloebonen, double time)
 {
@@ -30,19 +30,19 @@ void ErrorPendulum::calcPeriod(double shkaloebonen, double time)
 
 void ErrorPendulum::calcGravity(double period, double length)
 {
-    deltaGravity = sqrt(pow((4*pow(physics::pi, 2)/pow(period, 2))*systemLengthError, 2) + pow((8*pow(physics::pi, 2)*length/pow(period, 3))*deltaPeriod, 2));
+    deltaGravity = sqrt(pow((4*pow(constants::pi, 2)/pow(period, 2))*constants::systemLengthError, 2) + pow((8*pow(constants::pi, 2)*length/pow(period, 3))*deltaPeriod, 2));
 }
 
 void ErrorPendulum::calcK(double T1, double T2, double L1, double L2, double deltaT)
 {
     deltaK = sqrt(pow(2*T1*deltaPeriod/(pow(T2, 2)-pow(T1, 2)), 2)
                   +pow(2*T2*deltaT/(pow(T2, 2)-pow(T1, 2)), 2)
-                  +2*pow((systemLengthError/(L2-L1)), 2));
+                  +2*pow((constants::systemLengthError/(L2-L1)), 2));
 }
 
 void ErrorPendulum::calcGK(double k)
 {
-    deltaGK = 4*pow(physics::pi, 2)*deltaK/pow(k, 2); 
+    deltaGK = 4*pow(constants::pi, 2)*deltaK/pow(k, 2);
 }
 
 std::pair<int, std::vector<std::string>> ErrorPendulum::oCSV(ErrorPendulum &exp)

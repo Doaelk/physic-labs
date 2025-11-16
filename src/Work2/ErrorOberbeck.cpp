@@ -19,22 +19,22 @@ void ErrorOberbeck::calcTime(std::vector<double> &time)
 
     double randomTimeError = sqrt(sum/(number*(number-1)));
 
-    deltaTime = sqrt(pow(randomTimeError, 2)+pow(systemTimeError, 2));
+    deltaTime = sqrt(pow(randomTimeError, 2)+pow(constants::systemTimeError, 2));
 }
 
 void ErrorOberbeck::calcAcceleration(double t, double h)
 {
-    deltaAcceleration = sqrt(pow((2*systemHeightError)/pow(t, 2), 2) + pow((4*h*deltaTime)/pow(t, 3), 2));
+    deltaAcceleration = sqrt(pow((2*constants::systemLengthError)/pow(t, 2), 2) + pow((4*h*deltaTime)/pow(t, 3), 2));
 }
 
 void ErrorOberbeck::calcAngleAcceleration(double a, double r)
 {
-    deltaAngleAcceleration = sqrt(pow(deltaAcceleration/r, 2) + pow((systemHeightError*a)/pow(r, 2), 2));
+    deltaAngleAcceleration = sqrt(pow(deltaAcceleration/r, 2) + pow((constants::systemLengthError*a)/pow(r, 2), 2));
 }
 
 void ErrorOberbeck::calcForceMoment(double m, double r, double a)
 {
-    deltaForceMoment = sqrt(pow(systemHeightError*m*(physics::g-a), 2) + pow(systemMassError*r*(physics::g-a), 2) + pow(deltaAcceleration*r*m, 2));
+    deltaForceMoment = sqrt(pow(constants::systemLengthError*m*(constants::g-a), 2) + pow(constants::systemMassError*r*(constants::g-a), 2) + pow(deltaAcceleration*r*m, 2));
 }
 
 void ErrorOberbeck::calcInertiaMoment(double k, double b)

@@ -1,3 +1,0 @@
-/home/UwU/programming/physics_lab/build/CMakeFiles/physic-labs.dir
-/home/UwU/programming/physics_lab/build/CMakeFiles/edit_cache.dir
-/home/UwU/programming/physics_lab/build/CMakeFiles/rebuild_cache.dir

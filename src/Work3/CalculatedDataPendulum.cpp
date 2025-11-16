@@ -6,7 +6,7 @@
 
 void CalculatedDataPendulum::calcAverageTime(std::vector<double> &time)
 {
-    averTime = calcData::average(time); 
+    averTime = calcData::average(time);
 }
 
 void CalculatedDataPendulum::calcPeriod(double shkaloebonen, double time)
@@ -18,7 +18,7 @@ void CalculatedDataPendulum::calcPeriod(double shkaloebonen){ CalculatedDataPend
 
 void CalculatedDataPendulum::calcGravity(double length)
 {
-    gravity=4*pow(physics::pi, 2)*length/pow(period, 2);
+    gravity=4*pow(constants::pi, 2)*length/pow(period, 2);
 }
 
 void CalculatedDataPendulum::calcK(double T2, double L1, double L2)
@@ -28,7 +28,7 @@ void CalculatedDataPendulum::calcK(double T2, double L1, double L2)
 
 void CalculatedDataPendulum::calcGravityWithK()
 {
-    gk = 4*pow(physics::pi, 2)/k;
+    gk = 4*pow(constants::pi, 2)/k;
 }
 
 std::pair<int, std::vector<std::string>> CalculatedDataPendulum::oCSV(CalculatedDataPendulum &exp)

@@ -31,7 +31,7 @@ void CalculatedDataOberbeck::calcAngleAcceleration(double r)
 
 void CalculatedDataOberbeck::calcForceMoment(double m, double r)
 {
-    forceMoment = r*m*(physics::g-acceleration);
+    forceMoment = r*m*(constants::g-acceleration);
 }
 
 void CalculatedDataOberbeck::calcInertiaMoment()

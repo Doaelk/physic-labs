@@ -1,13 +1,10 @@
-#pragma once 
+#pragma once
 
 #include <vector>
 #include <string>
 
 struct ErrorPendulum
 {
-    double systemTimeError = 0.001;
-    double systemLengthError = 0.001;
-
     double deltaTime;
     double deltaPeriod;
     double deltaGravity;

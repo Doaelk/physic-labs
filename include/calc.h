@@ -9,5 +9,5 @@ public:
     static double roundTo(double base, int n);
     static double coeffA(std::vector<double> &x, std::vector<double> &y);
     static double coeffB(std::vector<double> &x, std::vector<double> &y);
-    static double sum(size_t count, ...);
+    static double multiplySum(std::vector<std::vector<double>> &&list);
 };

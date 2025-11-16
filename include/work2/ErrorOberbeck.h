@@ -5,10 +5,6 @@
 
 struct ErrorOberbeck
 {
-    double systemTimeError = 0.001;
-    double systemHeightError = 0.001;
-    double systemMassError = 0.00001;
-
     double deltaTime;
     double deltaAcceleration;
     double deltaAngleAcceleration;
@@ -18,7 +14,7 @@ struct ErrorOberbeck
     double deltaFrictionForce;
 
     void calcTime(std::vector<double> &time);
-    void calcAcceleration(double t, double h); 
+    void calcAcceleration(double t, double h);
     void calcAngleAcceleration(double a, double r);
     void calcForceMoment(double m, double r, double a);
     void calcInertiaMoment(double k, double b);
