@@ -1,5 +1,4 @@
 #pragma once
-//#define TEST
 
 #include <vector>
 #include <sstream>
@@ -15,19 +14,17 @@ public:
 
     dataStruct(){};
 
-    dataStruct(std::string fileName)   
+    dataStruct(std::string fileName)
     {
         std::ifstream file(fileName);
 
         if(!file.is_open())
         {
             std::cout << "File not opened fileName: " << fileName << std::endl;
+            return;
         }
 
         std::string line;
-        #ifdef TEST
-        std::cout << "TEST1\n";
-        #endif
 
         while (std::getline(file, line))
         {
@@ -44,12 +41,9 @@ public:
             ++experimentsQuantity;
             experiments.push_back(ExperimentType::iCSV(tokens));
         }
-        
+
         file.close();
-        #ifdef TEST
-        std::cout << "TEST2\n";
-        #endif
-    }   
+    }
 
     void addExperiment(ExperimentType& e)
     {
@@ -59,7 +53,7 @@ public:
     bool setExperiment(size_t index, ExperimentType& e)
     {
         if(index > experiments.size())
-            return false; 
+            return false;
 
         experiments[index] = e;
         return true;
@@ -69,7 +63,7 @@ public:
     {
         if(index > experiments.size())
             return false;
-        
+
         experiments[index].addValue(value);
         return true;
     }
@@ -80,6 +74,7 @@ public:
         if(!file.is_open())
         {
             std::cout << "File not opened\n";
+            return;
         }
 
         std::string line;

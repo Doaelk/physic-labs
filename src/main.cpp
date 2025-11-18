@@ -1,8 +1,8 @@
 #include <iostream>
 #include <format>
-
+#include <cmath>
 #include "PendulumLab.h"
-#include "CalculatedDataPendulum.h" 
+#include "CalculatedDataPendulum.h"
 #include "ErrorPendulum.h"
 
 #include "OberbeckLab.h"
@@ -15,6 +15,12 @@
 
 #define TEST
 
+struct Coeffs
+{
+    double a;
+    double b;
+};
+
 void calculatePendulumLab(std::string rawData, std::string outDir)
 {
     std::cout << "[Pendulum] start\n";
@@ -24,16 +30,31 @@ void calculatePendulumLab(std::string rawData, std::string outDir)
         dataStruct<CalculatedDataPendulum> calculatedLab;
         dataStruct<ErrorPendulum> errorLab;
 
+        Coeffs pend;
+
+        std::vector<double> Tvec;
+        std::vector<double> Lvec;
+
+
         for(int i = 0; i < laboratory.experimentsQuantity; ++i)
         {
             CalculatedDataPendulum calExp;
             calExp.calcPeriod(laboratory.experiments[i].shkaloebonen, laboratory.experiments[i].mathTime);
             calExp.calcGravity(laboratory.experiments[i].length);
             calculatedLab.addExperiment(calExp);
-            calExp.calcK(calculatedLab.experiments[0].period, laboratory.experiments[0].length, laboratory.experiments[i].length);
-            calExp.calcGravityWithK();
-            calculatedLab.setExperiment(i, calExp);
         }
+
+        for(size_t i = 0; i < 4; ++i)
+        {
+            Tvec.push_back(pow(calculatedLab.experiments[i].period, 2));
+            Lvec.push_back(laboratory.experiments[i].length);
+
+        }
+
+        pend.a = calcData::coeffA(Tvec, Lvec);
+
+
+        calculatedLab.experiments[0].gk = 4*pow(constants::pi, 2)*pend.a;
 
         for(int i = 0; i < laboratory.experimentsQuantity; ++i)
         {
@@ -56,6 +77,12 @@ void calculatePendulumLab(std::string rawData, std::string outDir)
     dataStruct<CalculatedDataPendulum> calculatedLab;
     dataStruct<ErrorPendulum> errorLab;
 
+    Coeffs pends;
+
+    std::vector<double> Tvec;
+    std::vector<double> Lvec;
+
+
     for(int i = 0; i < laboratory.experimentsQuantity; ++i)
     {
         CalculatedDataPendulum calExp;
@@ -63,10 +90,20 @@ void calculatePendulumLab(std::string rawData, std::string outDir)
         calExp.calcPeriod(laboratory.experiments[i].shkaloebonen);
         calExp.calcGravity(laboratory.experiments[i].length);
         calculatedLab.addExperiment(calExp);
-        calExp.calcK(calculatedLab.experiments[0].period, laboratory.experiments[0].length, laboratory.experiments[i].length);
-        calExp.calcGravityWithK();
-        calculatedLab.setExperiment(i, calExp);
     }
+
+
+    Tvec.clear();
+    Lvec.clear();
+    for(size_t i = 0; i < 4; ++i)
+    {
+        Tvec.push_back(pow(calculatedLab.experiments[i].period, 2));
+        Lvec.push_back(laboratory.experiments[i].length);
+    }
+
+    pends.a = calcData::coeffA(Tvec, Lvec);
+
+    calculatedLab.experiments[0].gk = 4*pow(constants::pi, 2)*pends.a;
 
     for(int i = 0; i < laboratory.experimentsQuantity; ++i)
     {
@@ -96,6 +133,11 @@ void calculateOberbeckLab(std::string rawData, std::string outDir)
     dataStruct<CalculatedDataOberbeck> calculatedLab;
     dataStruct<ErrorOberbeck> errorLab;
 
+    Coeffs ober;
+
+    std::vector<double> Kvec;
+    std::vector<double> bvec;
+
     for(int i = 0; i < laboratory.experimentsQuantity; ++i)
     {
         CalculatedDataOberbeck calExp;
@@ -105,10 +147,26 @@ void calculateOberbeckLab(std::string rawData, std::string outDir)
         calExp.calcForceMoment(laboratory.experiments[i].addMass, laboratory.experiments[i].radius);
         calExp.calcInertiaMoment();
         calculatedLab.addExperiment(calExp);
-        calExp.calcInertiaG(calculatedLab.experiments[(i/4)*4].forceMoment, calculatedLab.experiments[(i/4)*4].angleAcceleration);
-        calExp.calcFrictionForce();
-        calculatedLab.setExperiment(i, calExp);
     }
+
+    for(size_t i = 0; i < 4; ++i)
+    {
+        Kvec.clear();
+        bvec.clear();
+        for(size_t j = 0; j < 4; ++j)
+        {
+            Kvec.push_back(calculatedLab.experiments[i*4+j].forceMoment);
+            bvec.push_back(calculatedLab.experiments[i*4+j].angleAcceleration);
+        }
+
+        ober.a = calcData::coeffA(Kvec, bvec);
+        ober.b = calcData::coeffB(Kvec, bvec);
+
+        calculatedLab.experiments[i*4].frictionForce = ober.b/ober.a;
+        calculatedLab.experiments[i*4].inertiaG = 1/ober.a;
+
+    }
+
 
     for(int i = 0; i < laboratory.experimentsQuantity; ++i)
     {

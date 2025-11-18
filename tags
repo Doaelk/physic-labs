@@ -351,6 +351,7 @@ C_VERSION	build/CMakeFiles/4.0.3-dirty/CompilerIdC/CMakeCCompilerId.c	/^#  defin
 C_VERSION	build/CMakeFiles/4.0.3-dirty/CompilerIdC/CMakeCCompilerId.c	/^# define C_VERSION /;"	d	file:
 CalculatedDataOberbeck	include/work2/CalculatedDataOberbeck.h	/^struct CalculatedDataOberbeck$/;"	s
 CalculatedDataPendulum	include/work3/CalculatedDataPendulum.h	/^struct CalculatedDataPendulum$/;"	s
+Coeffs	src/main.cpp	/^struct Coeffs$/;"	s	file:
 DEC	build/CMakeFiles/4.0.3-dirty/CompilerIdC/CMakeCCompilerId.c	/^#define DEC(/;"	d	file:
 DEC	build/CMakeFiles/4.0.3-dirty/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define DEC(/;"	d	file:
 EQUALS	build/Makefile	/^EQUALS = =$/;"	m
@@ -360,6 +361,7 @@ GRAV	balls/calculate.cpp	/^#define GRAV /;"	d	file:
 HEX	build/CMakeFiles/4.0.3-dirty/CompilerIdC/CMakeCCompilerId.c	/^#define HEX(/;"	d	file:
 HEX	build/CMakeFiles/4.0.3-dirty/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#define HEX(/;"	d	file:
 ID_VOID_MAIN	build/CMakeFiles/4.0.3-dirty/CompilerIdC/CMakeCCompilerId.c	/^# define ID_VOID_MAIN$/;"	d	file:
+IMstream	include/io/IMstream.h	/^class IMstream$/;"	c
 InstallScripts	build/CMakeFiles/InstallScripts.json	/^	"InstallScripts" : $/;"	a
 LEN	balls/calculate.cpp	/^#define LEN /;"	d	file:
 OberbeckLab	include/work2/OberbeckLab.h	/^struct OberbeckLab$/;"	s
@@ -402,6 +404,7 @@ TEST	src/main.cpp	/^#define TEST$/;"	d	file:
 TESTG	src/Work1/errorAtwood.cpp	/^#define TESTG$/;"	d	file:
 __has_include	build/CMakeFiles/4.0.3-dirty/CompilerIdC/CMakeCCompilerId.c	/^#  define __has_include(/;"	d	file:
 __has_include	build/CMakeFiles/4.0.3-dirty/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^#  define __has_include(/;"	d	file:
+a	src/main.cpp	/^    double a;$/;"	m	struct:Coeffs	typeref:typename:double	file:
 acceleration	include/work1/calculatedDataAtwood.h	/^    double acceleration;$/;"	m	struct:calculatedDataAtwood	typeref:typename:double
 acceleration	include/work2/CalculatedDataOberbeck.h	/^    double acceleration;$/;"	m	struct:CalculatedDataOberbeck	typeref:typename:double
 addExperiment	include/dataStruct.h	/^    void addExperiment(ExperimentType& e)$/;"	f	class:dataStruct	typeref:typename:void
@@ -415,12 +418,13 @@ averTime	include/work1/calculatedDataAtwood.h	/^    double averTime;$/;"	m	struc
 averTime	include/work3/CalculatedDataPendulum.h	/^    double averTime;$/;"	m	struct:CalculatedDataPendulum	typeref:typename:double
 average	balls/calculate.cpp	/^double average(std::array<double, 10> data)$/;"	f	typeref:typename:double
 average	balls/calculate.cpp	/^double average(std::array<velocityDispersion, 10> data)$/;"	f	typeref:typename:double
-average	src/calc.cpp	/^double calcData::average(std::vector<double> &data)$/;"	f	class:calcData	typeref:typename:double
+average	src/calc.cpp	/^double calcData::average(const std::vector<double> &data)$/;"	f	class:calcData	typeref:typename:double
 averageAcceleration	include/work1/errorAtwood.h	/^    double averageAcceleration;$/;"	m	struct:errorAtwood	typeref:typename:double
 averageDispersion	balls/calculate.cpp	/^double averageDispersion(std::array<velocityDispersion, 10> data)$/;"	f	typeref:typename:double
 averageGravity	include/work1/errorAtwood.h	/^    double averageGravity;$/;"	m	struct:errorAtwood	typeref:typename:double
 averageTime	include/work1/errorAtwood.h	/^    double averageTime;$/;"	m	struct:errorAtwood	typeref:typename:double
 averageTime	include/work2/CalculatedDataOberbeck.h	/^    double averageTime;$/;"	m	struct:CalculatedDataOberbeck	typeref:typename:double
+b	src/main.cpp	/^    double b;$/;"	m	struct:Coeffs	typeref:typename:double	file:
 calcAcceleration	src/Work1/calculatedDataAtwood.cpp	/^void calculatedDataAtwood::calcAcceleration(double h1, double h2)$/;"	f	class:calculatedDataAtwood	typeref:typename:void
 calcAcceleration	src/Work1/errorAtwood.cpp	/^void errorAtwood::calcAcceleration(double time, double h1, double h2)$/;"	f	class:errorAtwood	typeref:typename:void
 calcAcceleration	src/Work2/CalculatedDataOberbeck.cpp	/^void CalculatedDataOberbeck::calcAcceleration(double h)$/;"	f	class:CalculatedDataOberbeck	typeref:typename:void
@@ -462,12 +466,12 @@ clean	build/Makefile	/^clean:$/;"	t
 clean/fast	build/Makefile	/^clean\/fast: clean$/;"	t
 cmake_check_build_system	build/Makefile	/^cmake_check_build_system:$/;"	t
 cmake_force	build/Makefile	/^cmake_force:$/;"	t
-coeffA	src/calc.cpp	/^double calcData::coeffA(std::vector<double> &x, std::vector<double> &y)$/;"	f	class:calcData	typeref:typename:double
-coeffB	src/calc.cpp	/^double calcData::coeffB(std::vector<double> &x, std::vector<double> &y)$/;"	f	class:calcData	typeref:typename:double
+coeffA	src/calc.cpp	/^double calcData::coeffA(const std::vector<double> &x, const std::vector<double> &y)$/;"	f	class:calcData	typeref:typename:double
+coeffB	src/calc.cpp	/^double calcData::coeffB(const std::vector<double> &x, const std::vector<double> &y)$/;"	f	class:calcData	typeref:typename:double
 const	build/CMakeFiles/4.0.3-dirty/CompilerIdC/CMakeCCompilerId.c	/^# define const$/;"	d	file:
 constants	include/constants.h	/^namespace constants$/;"	n
 dataStruct	include/dataStruct.h	/^    dataStruct(){};$/;"	f	class:dataStruct
-dataStruct	include/dataStruct.h	/^    dataStruct(std::string fileName)   $/;"	f	class:dataStruct
+dataStruct	include/dataStruct.h	/^    dataStruct(std::string fileName)$/;"	f	class:dataStruct
 dataStruct	include/dataStruct.h	/^class dataStruct$/;"	c
 default_target	build/Makefile	/^default_target: all$/;"	t
 deltaAcceleration	include/work1/errorAtwood.h	/^    double deltaAcceleration;$/;"	m	struct:errorAtwood	typeref:typename:double
@@ -544,7 +548,7 @@ main	build/CMakeFiles/4.0.3-dirty/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^int mai
 main	src/main.cpp	/^int main()$/;"	f	typeref:typename:int
 mass	include/work1/atwoodLab.h	/^    double mass;$/;"	m	struct:atwoodLab	typeref:typename:double
 mathTime	include/work3/PendulumLab.h	/^    double mathTime;$/;"	m	struct:PendulumLab	typeref:typename:double
-multiplySum	src/calc.cpp	/^double calcData::multiplySum(std::vector<std::vector<double>> &&list)$/;"	f	class:calcData	typeref:typename:double
+multiplySum	src/calc.cpp	/^double calcData::multiplySum(const std::vector<std::vector<double>> &&list)$/;"	f	class:calcData	typeref:typename:double
 oCSV	src/Work1/atwoodLab.cpp	/^std::pair<int, std::vector<std::string>> atwoodLab::oCSV(atwoodLab &exp)$/;"	f	class:atwoodLab	typeref:typename:std::pair<int,std::vector<std::string>>
 oCSV	src/Work1/calculatedDataAtwood.cpp	/^std::pair<int, std::vector<std::string>> calculatedDataAtwood::oCSV(calculatedDataAtwood &exp)$/;"	f	class:calculatedDataAtwood	typeref:typename:std::pair<int,std::vector<std::string>>
 oCSV	src/Work1/errorAtwood.cpp	/^std::pair<int, std::vector<std::string>> errorAtwood::oCSV(errorAtwood &exp)$/;"	f	class:errorAtwood	typeref:typename:std::pair<int,std::vector<std::string>>
@@ -569,7 +573,7 @@ radius	include/work2/OberbeckLab.h	/^    double radius;$/;"	m	struct:OberbeckLab
 readCSV	include/dataStruct.h	/^    void readCSV(std::string fileName)$/;"	f	class:dataStruct	typeref:typename:void
 rebuild_cache	build/Makefile	/^rebuild_cache:$/;"	t
 rebuild_cache/fast	build/Makefile	/^rebuild_cache\/fast: rebuild_cache$/;"	t
-roundTo	src/calc.cpp	/^double calcData::roundTo(double base, int n)$/;"	f	class:calcData	typeref:typename:double
+roundTo	src/calc.cpp	/^double calcData::roundTo(const double base, const int n)$/;"	f	class:calcData	typeref:typename:double
 setExperiment	include/dataStruct.h	/^    bool setExperiment(size_t index, ExperimentType& e)$/;"	f	class:dataStruct	typeref:typename:bool
 shkaloebonen	include/work3/PendulumLab.h	/^    double shkaloebonen;$/;"	m	struct:PendulumLab	typeref:typename:double
 src/Work2/CalculatedDataOberbeck.cpp.i	build/Makefile	/^src\/Work2\/CalculatedDataOberbeck.cpp.i:$/;"	t
