@@ -1,6 +1,6 @@
 #include <iostream>
-#include <format>
 #include <cmath>
+
 #include "PendulumLab.h"
 #include "CalculatedDataPendulum.h"
 #include "ErrorPendulum.h"
@@ -48,7 +48,6 @@ void calculatePendulumLab(std::string rawData, std::string outDir)
         {
             Tvec.push_back(pow(calculatedLab.experiments[i].period, 2));
             Lvec.push_back(laboratory.experiments[i].length);
-
         }
 
         pend.a = calcData::coeffA(Tvec, Lvec);
