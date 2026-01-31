@@ -1,5 +1,4 @@
 #include "LabStruct.h"
-#include "io/FStream.h"
 #include "labs/IExperiment.h"
 
 IExperiment* LabStruct::operator[] (const int index) 

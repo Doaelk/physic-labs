@@ -1,10 +1,3 @@
-#include <iostream>
-#include <cmath>
-
-#include "calc.h"
-#include "constants.h"
-#include "dataStruct.h"
-
 int main()
 {
     /*

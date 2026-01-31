@@ -4,9 +4,6 @@
 
 #include <memory>
 #include <vector>
-#include <sstream>
-#include <fstream>
-#include <filesystem>
 
 class LabStruct
 {
@@ -21,7 +18,9 @@ public:
 
     void addExperiment(std::unique_ptr<IExperiment>);
 
-    IExperiment operator[] (const int);
+    IExperiment* operator[] (const int);
 
     int getQuantityExperiments();
+
+    void caclculateLab();
 };

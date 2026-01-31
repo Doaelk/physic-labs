@@ -2,7 +2,7 @@
 
 #include <vector>
 
-class calcData
+class CalcData
 {
 public:
     static double average(const std::vector<double> &data);
