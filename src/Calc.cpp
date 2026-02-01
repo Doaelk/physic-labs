@@ -2,7 +2,7 @@
 
 #include "Calc.h"
 
-double CalcData::average(const std::vector<double> &data)
+double Calc::average(const std::vector<double> &data)
 {
     double sum = 0;
 
@@ -12,26 +12,26 @@ double CalcData::average(const std::vector<double> &data)
     return sum/data.size();
 }
 
-double CalcData::roundTo(const double base, const int n)
+double Calc::roundTo(const double base, const int n)
 {
     return round(base*pow(10,n))/pow(10,n);
 }
 
-double CalcData::coeffA(const std::vector<double> &x, const std::vector<double> &y)
+double Calc::coeffA(const std::vector<double> &x, const std::vector<double> &y)
 {
     size_t lenght = x.size();
 
-    return (lenght*CalcData::multiplySum({x, y})-CalcData::multiplySum({x})*CalcData::multiplySum({y}))/(lenght*CalcData::multiplySum({x, x})-pow(CalcData::multiplySum({x}), 2));
+    return (lenght*Calc::multiplySum({x, y})-Calc::multiplySum({x})*Calc::multiplySum({y}))/(lenght*Calc::multiplySum({x, x})-pow(Calc::multiplySum({x}), 2));
 }
 
-double CalcData::coeffB(const std::vector<double> &x, const std::vector<double> &y)
+double Calc::coeffB(const std::vector<double> &x, const std::vector<double> &y)
 {
     size_t lenght = x.size();
 
-    return (CalcData::multiplySum({x, x})*CalcData::multiplySum({y})-CalcData::multiplySum({x})*CalcData::multiplySum({x, y}))/(lenght*CalcData::multiplySum({x, x})-pow(CalcData::multiplySum({x}), 2));
+    return (Calc::multiplySum({x, x})*Calc::multiplySum({y})-Calc::multiplySum({x})*Calc::multiplySum({x, y}))/(lenght*Calc::multiplySum({x, x})-pow(Calc::multiplySum({x}), 2));
 }
 
-double CalcData::multiplySum(const std::vector<std::vector<double>> &&list)
+double Calc::multiplySum(const std::vector<std::vector<double>> &&list)
 {
     double sum = 0;
 
