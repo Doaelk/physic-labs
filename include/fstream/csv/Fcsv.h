@@ -10,8 +10,8 @@ namespace pl
 
 class Fcsv : pl::IFStream
 {
-    pl::LabToken read(const std::string&);   
-    pl::LabToken write(const std::string&);   
+    pl::LabToken read(const std::string&) noexcept(false);   
+    pl::LabToken write(const std::string&) noexcept(false);   
 };
 
 }

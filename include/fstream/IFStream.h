@@ -10,8 +10,8 @@ namespace pl
 class IFStream
 {
 public:
-    virtual pl::LabToken read(const std::string&);
-    virtual pl::LabToken write(const std::string&);
+    virtual pl::LabToken read(const std::string&) noexcept(false);
+    virtual pl::LabToken write(const std::string&) noexcept(false);
 };
 
 }
