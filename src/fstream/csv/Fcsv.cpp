@@ -1,34 +1,43 @@
 
-#include "io/csv/Fcsv.h"
-#include <fstream>
-#include <iterator>
-#include <string>
+#include "fstream/csv/Fcsv.h"
+#include "tokens/ExperimentToken.h"
+#include "tokens/LabToken.h"
 
-pl::Fcsv::read(std::string fileName)
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <sstream>
+
+pl::LabToken pl::Fcsv::read(const std::string& fileName)
 {
     std::ifstream file(fileName);   
 
     if(!file.is_open())
     {
         std::cout << "File not opened fileName: " << fileName << std::endl;
-        return;
+        return; //FIX ME
     }
 
-    std::string line;
 
+    pl::LabToken out;
+
+    std::string line;
     while(std::getline(file, line))
     {
-        if(line.std::empty() || line[0] == '#') continue;
+        if(line.empty() || line[0] == '#') continue;
 
         std::istringstream ss(line);
         std::string cell;
-        std::vector<std::string> tokens;
+        pl::ExperimentToken tokens;
 
         while(std::getline(ss, cell, ','))
         {
-            tokens.push_back(cell);
+            tokens.addData(cell);
         }
+        out.addRow(tokens);
     }
+
+    return out;
 }
 /*DataStruct(std::string fileName)
     {

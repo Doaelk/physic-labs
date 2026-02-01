@@ -1,6 +1,7 @@
 #pragma once
 
-#include "LabStruct.h"
+#include "tokens/LabToken.h"
+
 #include <string>
 
 namespace pl 
@@ -9,8 +10,8 @@ namespace pl
 class IFStream
 {
 public:
-    virtual LabStruct read(std::string) const;
-    virtual LabStruct write(std::string) const;
+    virtual pl::LabToken read(const std::string&);
+    virtual pl::LabToken write(const std::string&);
 };
 
 }

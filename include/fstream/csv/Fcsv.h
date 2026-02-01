@@ -1,7 +1,8 @@
 #pragma once
 
-#include "LabStruct.h"
 #include "fstream/IFStream.h"
+#include "tokens/LabToken.h"
+
 #include <string>
 
 namespace pl
@@ -9,8 +10,8 @@ namespace pl
 
 class Fcsv : pl::IFStream
 {
-    LabStruct read(std::string) const;   
-    LabStruct write(std::string) const;   
+    pl::LabToken read(const std::string&);   
+    pl::LabToken write(const std::string&);   
 };
 
 }
