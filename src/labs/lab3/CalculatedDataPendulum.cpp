@@ -1,12 +1,12 @@
-#include "CalculatedDataPendulum.h"
+#include "labs/lab3/CalculatedDataPendulum.h"
 #include "constants.h"
-#include "calc.h"
+#include "Calc.h"
 
 #include <cmath>
 
 void CalculatedDataPendulum::calcAverageTime(std::vector<double> &time)
 {
-    averTime = calcData::average(time);
+    averTime = Calc::average(time);
 }
 
 void CalculatedDataPendulum::calcPeriod(double shkaloebonen, double time)

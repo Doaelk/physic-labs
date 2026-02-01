@@ -1,0 +1,3 @@
+/home/OwO/programing/physic-labs/CMakeFiles/physic-labs.dir
+/home/OwO/programing/physic-labs/CMakeFiles/edit_cache.dir
+/home/OwO/programing/physic-labs/CMakeFiles/rebuild_cache.dir

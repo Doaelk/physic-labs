@@ -1,6 +1,6 @@
-#include "ErrorPendulum.h"
+#include "labs/lab3/ErrorPendulum.h"
 #include "constants.h"
-#include "calc.h"
+#include "Calc.h"
 
 #include <cmath>
 
@@ -8,7 +8,7 @@ void ErrorPendulum::calcTime(std::vector<double> &time)
 {
     size_t number = time.size();
 
-    double averageTime = calcData::average(time);
+    double averageTime = Calc::average(time);
 
     double sum = 0;
     for(size_t i = 0; i < number; ++i)

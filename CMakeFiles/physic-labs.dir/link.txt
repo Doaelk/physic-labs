@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/physic-labs.dir/link.d "CMakeFiles/physic-labs.dir/src/main.cpp.o" "CMakeFiles/physic-labs.dir/src/calc.cpp.o" -o physic-labs

@@ -18,6 +18,8 @@ public:
     void addRow(pl::ExperimentToken);
     pl::ExperimentToken operator[](const int i) const;
     int size() const;
+
+    std::vector<pl::ExperimentToken> getToken() const;
 };
 
 };

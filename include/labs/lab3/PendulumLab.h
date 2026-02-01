@@ -1,15 +1,18 @@
 #pragma once
 
-#include <vector>
-#include <string>
+#include "labs/LabStruct.h"
 
-struct PendulumLab
+
+class PendulumLab : LabStruct
 {
-    double shkaloebonen;
-    double length;
-    double mathTime;
-    std::vector<double> time;
+private: 
+    void calcAverageTime();
+    void calcPeriod();
+    void calcGravity();
+    void caclK();
+    void calcGravityWithK();
 
-    static PendulumLab iCSV(std::vector<std::string> &tokens);
-    static std::pair<int, std::vector<std::string>> oCSV(PendulumLab &exp);
+public:
+    void calculateLab() override;
+    void calculateError() override;
 };
