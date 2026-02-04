@@ -13,6 +13,7 @@ private:
     std::vector<std::unique_ptr<ExperimentStruct>> calculatedExpetimets;
 
 public:
+    LabStruct(pl::LabToken&&);
     LabStruct(LabStruct&&) = default;
 
     LabStruct(const LabStruct&) = delete;

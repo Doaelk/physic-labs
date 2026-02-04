@@ -1,7 +1,8 @@
 #pragma once
 
+#include <memory>
 #include <string>
-#include <vector>
+#include <unordered_map>
 
 //FIX ME 
 //add return refferences
@@ -11,11 +12,11 @@ namespace pl
 class ExperimentToken
 {
 private:
-    std::vector<std::string> token;
+    std::unordered_map<std::string, std::shared_ptr<std::string>> token;
 
 public:
-    void addData(std::string);
-    const std::string operator[](const int i) const;
+    void setData(std::string& key, std::unique_ptr<std::string> value);
+    const std::shared_ptr<std::string> operator[](const std::string&) const noexcept(false);
     int size() const;
 
 };
