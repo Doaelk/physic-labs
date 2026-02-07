@@ -1,6 +1,5 @@
 #pragma once
 
-#include "labs/LabStruct.h"
 #include "tokens/LabToken.h"
 
 #include <filesystem>
@@ -9,11 +8,11 @@
 namespace pl 
 {
 
-class IFStream
+class FStream
 {
 public:
     virtual pl::LabToken read(const std::string&) noexcept(false);
-    virtual void write(const LabStruct&, const std::filesystem::path&) noexcept(false);
+    virtual void write(const pl::LabToken&, const std::filesystem::path&) noexcept(false);
 };
 
 }

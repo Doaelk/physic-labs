@@ -1,7 +1,6 @@
 #pragma once
 
-#include "fstream/IFStream.h"
-#include "labs/LabStruct.h"
+#include "fstream/FStream.h"
 #include "tokens/LabToken.h"
 
 #include <filesystem>
@@ -10,10 +9,10 @@
 namespace pl
 {
 
-class Fcsv : pl::IFStream
+class Fcsv : pl::FStream
 {
     pl::LabToken read(const std::string&) noexcept(false) override final;   
-    void write(const LabStruct&, const std::filesystem::path&) noexcept(false) override final;   
+    void write(const pl::LabToken&, const std::filesystem::path&) noexcept(false) override final;   
 };
 
 }
