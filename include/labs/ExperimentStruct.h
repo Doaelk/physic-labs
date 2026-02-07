@@ -2,5 +2,6 @@
 
 class ExperimentStruct 
 {
-    
+public:
+    virtual void sex();
 };

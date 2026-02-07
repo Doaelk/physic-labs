@@ -19,6 +19,8 @@ public:
     LabStruct(const LabStruct&) = delete;
     LabStruct& operator=(const LabStruct&) = delete;
 
+    virtual ~LabStruct() = default;
+
     void addExperiment(std::unique_ptr<ExperimentStruct>);
 
     ExperimentStruct* operator[](const int);
