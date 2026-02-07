@@ -1,7 +1,8 @@
-#include "tokens/LabToken.h"
-#include "tokens/ExperimentToken.h"
 #include <memory>
 #include <vector>
+
+#include "tokens/LabToken.h"
+#include "tokens/ExperimentToken.h"
 
 void pl::LabToken::addRow(pl::ExperimentToken& exp)
 { token.push_back(std::make_shared<pl::ExperimentToken>(exp)); }

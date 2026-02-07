@@ -1,7 +1,7 @@
-#include "tokens/ExperimentToken.h"
-
 #include <memory>
 #include <string>
+
+#include "tokens/ExperimentToken.h"
 
 void pl::ExperimentToken::setExpirementData(std::string& key, std::string& value)
 { token[key] = std::make_shared<std::string>(value); }

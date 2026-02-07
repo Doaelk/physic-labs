@@ -1,8 +1,8 @@
+#include <memory>
+#include <stdexcept>
 
 #include "LabFactory.h"
 #include "labs/LabStruct.h"
-#include <memory>
-#include <stdexcept>
 
 std::unique_ptr<LabStruct> LabFactory::create(const LabType type, const pl::LabToken &token)
 {
