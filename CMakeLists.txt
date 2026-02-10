@@ -9,6 +9,10 @@ add_executable(${PROJECT_NAME}
     src/Calc.cpp
 )
 
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/external/SFML)
+
+
+target_link_libraries(${PROJECT_NAME} PRIVATE SFML::Graphics SFML::Window SFML::System)
 target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/include")
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
