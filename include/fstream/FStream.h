@@ -1,6 +1,6 @@
 #pragma once
 
-#include "tokens/LabToken.h"
+#include "tokens/lab/LabToken.h"
 
 #include <filesystem>
 #include <string>

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "labs/ExperimentStruct.h"
-#include "tokens/LabToken.h"
+#include "tokens/lab/LabToken.h"
 
 #include <memory>
 #include <vector>

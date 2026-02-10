@@ -1,6 +1,6 @@
 #pragma once
 
-#include "tokens/ExperimentToken.h"
+#include "tokens/lab/ExperimentToken.h"
 
 #include <memory>
 #include <vector>

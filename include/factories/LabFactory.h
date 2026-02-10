@@ -1,7 +1,7 @@
 #pragma once
 
 #include "labs/LabStruct.h"
-#include "tokens/LabToken.h"
+#include "tokens/lab/LabToken.h"
 enum class LabType 
 {
     

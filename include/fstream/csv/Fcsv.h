@@ -1,7 +1,7 @@
 #pragma once
 
 #include "fstream/FStream.h"
-#include "tokens/LabToken.h"
+#include "tokens/lab/LabToken.h"
 
 #include <filesystem>
 #include <string>
