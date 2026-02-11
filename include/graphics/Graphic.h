@@ -1,8 +1,8 @@
 #pragma once 
 
+#include "graphics/render/IRender.h"
 #include <utility>
 #include <vector>
-#include <SFML/Window.hpp>
  
 namespace pl
 {
@@ -10,17 +10,19 @@ namespace pl
 class Graphic
 {
 private:
-    const sf::Window window;
+    IRender render;
     const std::vector<float> alongX;
     const std::vector<float> alongY;
     const std::vector<std::pair<float, float>> data;
 
 public:
-    Graphic(std::vector<float>& x, std::vector<float>& y, 
-            std::vector<std::pair<float, float>>& data, sf::Window& win) 
-    : window(std::move(win)), alongX(x), alongY(y),  data(data)  {}
+    Graphic(std::vector<float>&& x, std::vector<float>&& y, 
+            std::vector<std::pair<float, float>>&& data, IRender&& render) 
+    : render(std::move(render)), alongX(std::move(x)), alongY(std::move(y)),  data(std::move(data))  {}
 
-    void drawWindow();
+    void setRenderType(IRender&& render);
+
+    void drawGraphic();
 
     Graphic(Graphic&&);
     Graphic(const Graphic&);

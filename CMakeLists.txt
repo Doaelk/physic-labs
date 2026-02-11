@@ -15,9 +15,12 @@ FetchContent_Declare(SFML
     SYSTEM)
 FetchContent_MakeAvailable(SFML)
 
+file(GLOB executeF "*.cpp")
+
 add_executable(${PROJECT_NAME}
     src/main.cpp
     src/Calc.cpp
+    ${executeF}
 )
 
 # add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/external/SFML)
