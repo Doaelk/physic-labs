@@ -11,10 +11,13 @@ class LabStruct
 private:
     std::vector<std::unique_ptr<ExperimentStruct>> experiments;
     std::vector<std::unique_ptr<ExperimentStruct>> calculatedExpetimets;
+    std::vector<std::unique_ptr<ExperimentStruct>> errors;
 
 public:
-    LabStruct(pl::LabToken&&);
+    LabStruct() = default;
+    LabStruct(pl::LabToken&);
     LabStruct(LabStruct&&) = default;
+    LabStruct& operator=(LabStruct&&) = default;
 
     LabStruct(const LabStruct&) = delete;
     LabStruct& operator=(const LabStruct&) = delete;

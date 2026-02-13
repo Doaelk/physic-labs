@@ -13,3 +13,10 @@ std::shared_ptr<pl::ExperimentToken> pl::LabToken::operator[](const int i) const
 int pl::LabToken::size() const
 { return token.size(); }
 
+
+std::vector<std::shared_ptr<pl::ExperimentToken>>::iterator begin()
+{ return token.begin();}
+
+std::vector<std::shared_ptr<pl::ExperimentToken>>::iterator end()
+{ return token.end();}
+
