@@ -12,8 +12,8 @@ namespace pl
 class FStream
 {
 public:
-    virtual std::shared_ptr<pl::LabToken> read(const std::string&) noexcept(false);
-    virtual void write(const pl::LabToken&, const std::filesystem::path&) noexcept(false);
+    virtual std::shared_ptr<pl::LabToken> read(const std::string&) noexcept(false) = 0;
+    virtual void write(const std::shared_ptr<pl::LabToken>, const std::filesystem::path&) noexcept(false) = 0;
 };
 
 }

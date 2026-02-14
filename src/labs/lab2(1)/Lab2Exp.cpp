@@ -8,29 +8,29 @@
 
 Lab2Exp::Lab2Exp(std::shared_ptr<pl::ExperimentToken> token)
 {
-    U0 = std::stof(*(*token)["U0"]);
-    U = std::stof(*(*token)["U"]);
-    I = std::stof(*(*token)["I"]);
+    U0 = std::stof((*token)["U0"]);
+    U = std::stof((*token)["U"]);
+    I = std::stof((*token)["I"]);
 }
 
 void Lab2Exp::calcResE()
 {
-    Re = pl::calcRes(U, I);
+    Re = U/I;
 }
 
 void Lab2Exp::calcResI()
 {
-    Ri = pl::calcRes(U0-U, I);
+    Ri = (U0-U)/I;
 }
 
 void Lab2Exp::calcPowE()
 {
-    Pe = pl::calcPow(I, Re);
+    Pe = U*U/Re;
 }
 
 void Lab2Exp::calcPowI()
 {
-    Pi = pl::calcPow(I, Ri);
+    Pi = I*I*Ri;
 }
 
 void Lab2Exp::calcShCirCur()
@@ -41,7 +41,7 @@ void Lab2Exp::calcShCirCur()
         return;
     }
 
-    ShCr = U0/(Ri-Re);
+    ShCr = U0/Ri;
 }
 
 void Lab2Exp::calcPow0()

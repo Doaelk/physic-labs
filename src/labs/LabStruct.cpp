@@ -9,7 +9,7 @@ int LabStruct::getQuantityExperiments()
 { return experiments.size(); }
 
 void LabStruct::addExperiment(std::shared_ptr<ExperimentStruct> e)
-{ experiments.push_back(std::move(e)); }
+{ experiments.push_back(e); }
 
 void LabStruct::addError(std::shared_ptr<ExperimentStruct> e)
 { errors.push_back(std::move(e)); }
@@ -22,4 +22,14 @@ void LabStruct::calculateLab()
     }
 }
 
+std::shared_ptr<pl::LabToken> LabStruct::getToken() const
+{
+    pl::LabToken out;
 
+    for(std::shared_ptr<ExperimentStruct> exp : experiments)
+    {
+        out.addRow(*exp->getToken());       
+    }
+
+    return std::make_shared<pl::LabToken>(out);
+}

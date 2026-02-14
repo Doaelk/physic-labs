@@ -14,7 +14,7 @@ class Fcsv : pl::FStream
 {
 public:
     std::shared_ptr<pl::LabToken> read(const std::string&) noexcept(false) override final;   
-    void write(const pl::LabToken&, const std::filesystem::path&) noexcept(false) override final;   
+    void write(const std::shared_ptr<pl::LabToken>, const std::filesystem::path&) noexcept(false) override final;   
 };
 
 }

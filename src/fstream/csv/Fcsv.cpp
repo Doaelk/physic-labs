@@ -1,4 +1,3 @@
-
 #include "fstream/csv/Fcsv.h"
 #include "tokens/ExperimentToken.h"
 #include "tokens/LabToken.h"
@@ -19,32 +18,28 @@ std::shared_ptr<pl::LabToken> pl::Fcsv::read(const std::string& fileName) noexce
 
 
     pl::LabToken out;
-    std::string keyLine;
     std::string line;
 
-    do{
-        
-        if(std::getline(file, keyLine)) {
-            if(line.empty() || line[0 == '#']) continue;
-            else break;
-        }
-        else {
-            throw std::runtime_error("Cannot get key line");
-        }
-    } while (true);
-
     std::vector<std::string> keys;
-    std::istringstream ss(keyLine);
-    std::string cell;
 
-    while(std::getline(ss, cell, ','))
-        keys.push_back(cell);
+    while (std::getline(file, line)) {
+        if(line.empty() || line[0] == '#') continue;
+
+        std::istringstream ss(line);
+        std::string cell;
+
+        while(std::getline(ss, cell, ','))
+            keys.push_back(cell);
+        break;
+    }
 
     while(std::getline(file, line))
     {
         if(line.empty() || line[0] == '#') continue;
 
         pl::ExperimentToken expToken;
+        std::istringstream ss(line);
+        std::string cell;
 
         int i = 0;
         while(std::getline(ss, cell, ','))
@@ -58,7 +53,7 @@ std::shared_ptr<pl::LabToken> pl::Fcsv::read(const std::string& fileName) noexce
     return std::make_shared<LabToken>(out);
 }
 
-void pl::Fcsv::write(const pl::LabToken& labToken, const std::filesystem::path& filePath) noexcept(false)
+void pl::Fcsv::write(const std::shared_ptr<pl::LabToken> labToken, const std::filesystem::path& filePath) noexcept(false)
 {
     std::filesystem::create_directories(filePath.parent_path());
     
@@ -67,13 +62,13 @@ void pl::Fcsv::write(const pl::LabToken& labToken, const std::filesystem::path& 
     if(!file.is_open())
         throw std::runtime_error("Cannot open file: " + filePath.string());
 
-    for(const auto line : *labToken[0])
-        file << line.second << ",";
+    for(const auto& line : *(*labToken)[0])
+        file << line.first << ",";
     file << "\n";
 
-    for(int i = 0; i < labToken.size(); ++i) 
+    for(int i = 0; i < labToken->size(); ++i) 
     {
-        for(const auto line : *labToken[i])
+        for(const auto& line : *(*labToken)[i])
             file << line.second << ",";
         file << "\n";
     }

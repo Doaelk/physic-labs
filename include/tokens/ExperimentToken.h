@@ -1,6 +1,5 @@
 #pragma once
 
-#include <memory>
 #include <string>
 #include <unordered_map>
 
@@ -10,17 +9,16 @@ namespace pl
 class ExperimentToken
 {
 private:
-    std::unordered_map<std::string, std::shared_ptr<std::string>> token;
+    std::unordered_map<std::string, std::string> token;
 
 public:
-    void setExperimentData(std::string& key, std::string& value);
-    void setExperimentData(std::string&& key, std::string&& value);
+    void setExperimentData(std::string key, std::string value);
 
-    const std::shared_ptr<std::string> operator[](const std::string&) const noexcept(false);
+    std::string operator[](const std::string&) const noexcept(false);
     int size() const;
 
-    std::unordered_map<std::string, std::shared_ptr<std::string>>::iterator begin();
-    std::unordered_map<std::string, std::shared_ptr<std::string>>::iterator end();
+    std::unordered_map<std::string, std::string>::iterator begin();
+    std::unordered_map<std::string, std::string>::iterator end();
 };
 
 };

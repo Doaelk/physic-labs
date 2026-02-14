@@ -17,6 +17,6 @@ public:
 
     ~ExperimentStruct() = default;
 
-    virtual void calcExp();
-    virtual std::shared_ptr<pl::ExperimentToken> getToken() const;
+    virtual void calcExp() = 0;
+    virtual std::shared_ptr<pl::ExperimentToken> getToken() const = 0;
 };

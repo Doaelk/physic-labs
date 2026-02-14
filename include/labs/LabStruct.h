@@ -29,8 +29,8 @@ public:
 
     int getQuantityExperiments();
 
-    void calculateLab();
-    virtual void calculateError();
+    virtual void calculateLab();
+    virtual void calculateError() = 0;
 
-    virtual std::shared_ptr<pl::LabToken> getToken() const;
+    std::shared_ptr<pl::LabToken> getToken() const;
 };
