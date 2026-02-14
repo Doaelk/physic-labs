@@ -11,3 +11,8 @@ Lab2::Lab2(pl::LabToken& token)
         addExperiment(std::make_unique<Lab2Exp>(expToken));
     }
 }
+
+void Lab2::calculateLab() 
+{
+
+}

@@ -10,12 +10,10 @@ class LabStruct
 {
 private:
     std::vector<std::unique_ptr<ExperimentStruct>> experiments;
-    std::vector<std::unique_ptr<ExperimentStruct>> calculatedExpetimets;
     std::vector<std::unique_ptr<ExperimentStruct>> errors;
 
 public:
     LabStruct() = default;
-    LabStruct(pl::LabToken&);
     LabStruct(LabStruct&&) = default;
     LabStruct& operator=(LabStruct&&) = default;
 
@@ -25,8 +23,9 @@ public:
     virtual ~LabStruct() = default;
 
     void addExperiment(std::unique_ptr<ExperimentStruct>);
+    void addError(std::unique_ptr<ExperimentStruct>);
 
-    ExperimentStruct* operator[](const int);
+    //ExperimentStruct* operator[](const int);
 
     int getQuantityExperiments();
 

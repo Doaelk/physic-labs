@@ -15,4 +15,6 @@ public:
     ExperimentStruct& operator=(const ExperimentStruct&) = delete;
 
     virtual ~ExperimentStruct() = default;
+
+    virtual pl::ExperimentToken getToken() const;
 };
