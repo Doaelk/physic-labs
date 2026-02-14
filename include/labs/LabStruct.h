@@ -8,9 +8,9 @@
 
 class LabStruct
 {
-private:
-    std::vector<std::unique_ptr<ExperimentStruct>> experiments;
-    std::vector<std::unique_ptr<ExperimentStruct>> errors;
+protected:
+    std::vector<std::shared_ptr<ExperimentStruct>> experiments;
+    std::vector<std::shared_ptr<ExperimentStruct>> errors;
 
 public:
     LabStruct() = default;
@@ -22,14 +22,14 @@ public:
 
     virtual ~LabStruct() = default;
 
-    void addExperiment(std::unique_ptr<ExperimentStruct>);
-    void addError(std::unique_ptr<ExperimentStruct>);
+    void addExperiment(std::shared_ptr<ExperimentStruct>);
+    void addError(std::shared_ptr<ExperimentStruct>);
 
     //ExperimentStruct* operator[](const int);
 
     int getQuantityExperiments();
 
-    virtual void calculateLab();
+    void calculateLab();
     virtual void calculateError();
 
     virtual pl::LabToken getToken() const;

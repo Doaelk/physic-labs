@@ -16,5 +16,6 @@ public:
 
     virtual ~ExperimentStruct() = default;
 
+    virtual void calcExp();
     virtual pl::ExperimentToken getToken() const;
 };

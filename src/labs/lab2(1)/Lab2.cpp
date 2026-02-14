@@ -8,11 +8,6 @@ Lab2::Lab2(pl::LabToken& token)
 {
     for(std::shared_ptr<pl::ExperimentToken> expToken : token)
     {
-        addExperiment(std::make_unique<Lab2Exp>(expToken));
+        addExperiment(std::make_shared<Lab2Exp>(expToken));
     }
-}
-
-void Lab2::calculateLab() 
-{
-
 }

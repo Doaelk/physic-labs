@@ -2,6 +2,7 @@
 
 #include "labs/LabStruct.h"
 #include "tokens/LabToken.h"
+#include <memory>
 
 
 class LabFactory
@@ -17,5 +18,5 @@ private:
     };
 
 public:
-    static std::unique_ptr<LabStruct> create(const LabType, pl::LabToken&) noexcept(false);
+    static std::shared_ptr<LabStruct> create(const LabType, pl::LabToken&) noexcept(false);
 };

@@ -5,7 +5,7 @@
 #include "labs/LabStruct.h"
 #include "labs/lab2(1)/Lab2.h"
 
-std::unique_ptr<LabStruct> LabFactory::create(const LabType type, pl::LabToken &token)
+std::shared_ptr<LabStruct> LabFactory::create(const LabType type, pl::LabToken &token)
 {
     switch (type)
     {
@@ -13,7 +13,7 @@ std::unique_ptr<LabStruct> LabFactory::create(const LabType type, pl::LabToken &
             break;
 
         case LabType::LAB2:
-            return std::make_unique<Lab2>(token);
+            return std::make_shared<Lab2>(token);
             
         case LabType::LAB3:
             break;

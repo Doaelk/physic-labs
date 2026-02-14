@@ -1,6 +1,6 @@
 #pragma once
 
-namespace constants
+namespace pl
 {
     inline constexpr double g = 9.80665;
     inline constexpr double pi = 3.141592;

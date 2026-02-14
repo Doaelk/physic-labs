@@ -14,9 +14,9 @@ int pl::LabToken::size() const
 { return token.size(); }
 
 
-std::vector<std::shared_ptr<pl::ExperimentToken>>::iterator begin()
+std::vector<std::shared_ptr<pl::ExperimentToken>>::iterator pl::LabToken::begin()
 { return token.begin();}
 
-std::vector<std::shared_ptr<pl::ExperimentToken>>::iterator end()
+std::vector<std::shared_ptr<pl::ExperimentToken>>::iterator pl::LabToken::end()
 { return token.end();}
 
