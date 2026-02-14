@@ -6,6 +6,9 @@
 class Lab2 : public LabStruct
 {
 public:
-    explicit Lab2(pl::LabToken&);
-    void calculateError()  override;
+    explicit Lab2(std::shared_ptr<pl::LabToken>);
+
+    void calculateError() override;
+    
+    std::shared_ptr<pl::LabToken> getToken() const override;   
 };

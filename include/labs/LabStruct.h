@@ -20,7 +20,7 @@ public:
     LabStruct(const LabStruct&) = delete;
     LabStruct& operator=(const LabStruct&) = delete;
 
-    virtual ~LabStruct() = default;
+    ~LabStruct() = default;
 
     void addExperiment(std::shared_ptr<ExperimentStruct>);
     void addError(std::shared_ptr<ExperimentStruct>);
@@ -32,5 +32,5 @@ public:
     void calculateLab();
     virtual void calculateError();
 
-    virtual pl::LabToken getToken() const;
+    virtual std::shared_ptr<pl::LabToken> getToken() const;
 };

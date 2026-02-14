@@ -5,7 +5,7 @@
 #include "labs/LabStruct.h"
 #include "labs/lab2(1)/Lab2.h"
 
-std::shared_ptr<LabStruct> LabFactory::create(const LabType type, pl::LabToken &token)
+std::shared_ptr<LabStruct> LabFactory::create(const LabType type, std::shared_ptr<pl::LabToken> token)
 {
     switch (type)
     {

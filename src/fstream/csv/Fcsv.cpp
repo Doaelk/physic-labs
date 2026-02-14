@@ -5,11 +5,12 @@
 
 #include <filesystem>
 #include <fstream>
+#include <memory>
 #include <stdexcept>
 #include <string>
 #include <sstream>
 
-pl::LabToken pl::Fcsv::read(const std::string& fileName) noexcept(false)
+std::shared_ptr<pl::LabToken> pl::Fcsv::read(const std::string& fileName) noexcept(false)
 {
     std::ifstream file(fileName);   
 
@@ -48,13 +49,13 @@ pl::LabToken pl::Fcsv::read(const std::string& fileName) noexcept(false)
         int i = 0;
         while(std::getline(ss, cell, ','))
         {
-            expToken.setExpirementData(keys[i], cell);
+            expToken.setExperimentData(keys[i], cell);
             ++i;
         }
         out.addRow(expToken);
     }
 
-    return out;
+    return std::make_shared<LabToken>(out);
 }
 
 void pl::Fcsv::write(const pl::LabToken& labToken, const std::filesystem::path& filePath) noexcept(false)

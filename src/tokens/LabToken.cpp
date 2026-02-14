@@ -2,6 +2,7 @@
 #include <vector>
 
 #include "tokens/LabToken.h"
+#include "labs/ExperimentStruct.h"
 #include "tokens/ExperimentToken.h"
 
 void pl::LabToken::addRow(pl::ExperimentToken& exp)

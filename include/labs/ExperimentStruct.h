@@ -1,6 +1,7 @@
 #pragma once
 
 #include "tokens/ExperimentToken.h"
+#include <memory>
 
 class ExperimentStruct 
 {
@@ -14,8 +15,8 @@ public:
     ExperimentStruct(const ExperimentStruct&) = delete;
     ExperimentStruct& operator=(const ExperimentStruct&) = delete;
 
-    virtual ~ExperimentStruct() = default;
+    ~ExperimentStruct() = default;
 
     virtual void calcExp();
-    virtual pl::ExperimentToken getToken() const;
+    virtual std::shared_ptr<pl::ExperimentToken> getToken() const;
 };

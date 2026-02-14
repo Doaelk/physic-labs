@@ -3,8 +3,11 @@
 
 #include "tokens/ExperimentToken.h"
 
-void pl::ExperimentToken::setExpirementData(std::string& key, std::string& value)
+void pl::ExperimentToken::setExperimentData(std::string& key, std::string& value)
 { token[key] = std::make_shared<std::string>(value); }
+
+void pl::ExperimentToken::setExperimentData(std::string&& key, std::string&& value)
+{ return pl::ExperimentToken::setExperimentData(std::string(key), std::string(value)); }
 
 const std::shared_ptr<std::string> pl::ExperimentToken::operator[](const std::string& key) const
 { return token.at(key); }

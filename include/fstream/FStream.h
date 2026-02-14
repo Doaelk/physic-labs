@@ -3,6 +3,7 @@
 #include "tokens/LabToken.h"
 
 #include <filesystem>
+#include <memory>
 #include <string>
 
 namespace pl 
@@ -11,7 +12,7 @@ namespace pl
 class FStream
 {
 public:
-    virtual pl::LabToken read(const std::string&) noexcept(false);
+    virtual std::shared_ptr<pl::LabToken> read(const std::string&) noexcept(false);
     virtual void write(const pl::LabToken&, const std::filesystem::path&) noexcept(false);
 };
 

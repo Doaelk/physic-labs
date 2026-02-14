@@ -24,4 +24,5 @@ public:
     void calcExp() override;
 
     explicit Lab2Exp(std::shared_ptr<pl::ExperimentToken>);    
+    std::shared_ptr<pl::ExperimentToken> getToken() const override;
 };

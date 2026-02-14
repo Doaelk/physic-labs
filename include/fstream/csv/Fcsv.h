@@ -4,6 +4,7 @@
 #include "tokens/LabToken.h"
 
 #include <filesystem>
+#include <memory>
 #include <string>
 
 namespace pl
@@ -11,7 +12,8 @@ namespace pl
 
 class Fcsv : pl::FStream
 {
-    pl::LabToken read(const std::string&) noexcept(false) override final;   
+public:
+    std::shared_ptr<pl::LabToken> read(const std::string&) noexcept(false) override final;   
     void write(const pl::LabToken&, const std::filesystem::path&) noexcept(false) override final;   
 };
 
