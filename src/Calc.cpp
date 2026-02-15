@@ -51,3 +51,17 @@ double Calc::multiplySum(const std::vector<std::vector<double>> &&list)
 
     return sum;
 }
+
+double Calc::randomMiss(const std::vector<double> &data)
+{
+    int count = data.size();
+    double average = Calc::average(data);
+
+    double sum = 0;
+    for(double t : data)
+    {
+        sum += pow(t-average, 2);
+    }
+
+    return sqrt(sum / (count*(count-1)));
+}

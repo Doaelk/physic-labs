@@ -3,9 +3,6 @@
 #include "tokens/ExperimentToken.h"
 #include <memory>
 
-//ExperimentStruct* LabStruct::operator[] (const int i) 
-//{ return experiments[i].get(); }
-
 int LabStruct::getQuantityExperiments() 
 { return experiments.size(); }
 
@@ -27,11 +24,6 @@ std::shared_ptr<pl::LabToken> LabStruct::getToken() const
     token.addExperimentData(calculate->getToken());
     token.addExperimentData(errors->getToken());
     out.addRow(token);
-
-    //for(std::shared_ptr<ExperimentStruct> exp : experiments)
-    //{
-    //    out.addRow(*exp->getToken());       
-    //}
 
     return std::make_shared<pl::LabToken>(out);
 }
