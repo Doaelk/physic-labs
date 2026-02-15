@@ -1,5 +1,6 @@
 #pragma once
 
+#include <memory>
 #include <string>
 #include <unordered_map>
 
@@ -13,6 +14,8 @@ private:
 
 public:
     void setExperimentData(std::string key, std::string value);
+
+    void addExperimentData(std::shared_ptr<ExperimentToken>);
 
     std::string operator[](const std::string&) const noexcept(false);
     int size() const;

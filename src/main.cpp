@@ -28,7 +28,6 @@ int main()
     try {
         reader.write(lab->getToken(), "data/calc-data.csv");
     } catch (std::runtime_error& e) {
-        std::cout << "DSGDSJGDSF\n";
         std::cout << e.what() << std::endl;
     }
 }

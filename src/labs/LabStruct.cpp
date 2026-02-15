@@ -1,5 +1,6 @@
 #include "labs/LabStruct.h"
 #include "labs/ExperimentStruct.h"
+#include "tokens/ExperimentToken.h"
 #include <memory>
 
 //ExperimentStruct* LabStruct::operator[] (const int i) 
@@ -21,10 +22,16 @@ std::shared_ptr<pl::LabToken> LabStruct::getToken() const
 {
     pl::LabToken out;
 
-    for(std::shared_ptr<ExperimentStruct> exp : experiments)
-    {
-        out.addRow(*exp->getToken());       
-    }
+    pl::ExperimentToken token; 
+
+    token.addExperimentData(calculate->getToken());
+    token.addExperimentData(errors->getToken());
+    out.addRow(token);
+
+    //for(std::shared_ptr<ExperimentStruct> exp : experiments)
+    //{
+    //    out.addRow(*exp->getToken());       
+    //}
 
     return std::make_shared<pl::LabToken>(out);
 }

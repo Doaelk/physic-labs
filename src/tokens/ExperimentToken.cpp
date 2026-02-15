@@ -1,3 +1,4 @@
+#include <memory>
 #include <string>
 
 #include "tokens/ExperimentToken.h"
@@ -18,3 +19,11 @@ std::unordered_map<std::string, std::string>::iterator pl::ExperimentToken::begi
 
 std::unordered_map<std::string, std::string>::iterator pl::ExperimentToken::end() 
 { return token.end(); }
+
+void pl::ExperimentToken::addExperimentData(std::shared_ptr<pl::ExperimentToken> token)
+{
+    for(const auto& d : *token)
+    {
+        this->token[d.first] = d.second;
+    }
+}
