@@ -13,6 +13,8 @@ add_executable(${PROJECT_NAME}
     src/labs/LabStruct.cpp
     src/labs/lab2\(1\)/Lab2.cpp
     src/labs/lab2\(1\)/Lab2Exp.cpp
+    src/labs/lab2\(1\)/Lab2Calc.cpp
+    src/labs/lab2\(1\)/Lab2Error.cpp
     src/tokens/LabToken.cpp
     src/tokens/ExperimentToken.cpp
 )

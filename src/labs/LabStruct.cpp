@@ -11,16 +11,11 @@ int LabStruct::getQuantityExperiments()
 void LabStruct::addExperiment(std::shared_ptr<ExperimentStruct> e)
 { experiments.push_back(e); }
 
-void LabStruct::addError(std::shared_ptr<ExperimentStruct> e)
-{ errors.push_back(std::move(e)); }
+void LabStruct::setCalc(std::shared_ptr<ExperimentStruct> e)
+{ calculate = std::move(e); }
 
-void LabStruct::calculateLab() 
-{
-    for(std::shared_ptr<ExperimentStruct> exp : experiments)
-    {
-        exp->calcExp();   
-    }
-}
+void LabStruct::setError(std::shared_ptr<ExperimentStruct> e)
+{ errors = std::move(e); }
 
 std::shared_ptr<pl::LabToken> LabStruct::getToken() const
 {
