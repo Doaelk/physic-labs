@@ -50,6 +50,6 @@ void Lab2::calculateLab()
 
     errorLab->U = Calc::randomMiss(U);
     errorLab->I = Calc::randomMiss(I);
-    errorLab->Ri
+    errorLab->Ri = Calc::deltaCoeffA(I, Calc::dy())
 }
 
