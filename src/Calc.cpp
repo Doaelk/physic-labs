@@ -68,7 +68,11 @@ double Calc::randomMiss(const std::vector<double> &data)
 
 double Calc::dy(const std::vector<double>& exp, const std::vector<double>& theor)
 {
-    int n = theor.size();
+    int n = 0;
+    if(exp.size() > theor.size())
+        n = theor.size();
+    else
+        n = exp.size();
 
     std::vector<double> diff;
 
@@ -85,6 +89,20 @@ double Calc::dy(const std::vector<double>& exp, const double theor)
         t.push_back(theor);
 
     return Calc::dy(exp, t);
+}
+
+double Calc::dy(const double exp, const std::vector<double>& theor)
+{
+    std::vector<double> t(theor.size());
+    for(int i = 0; i < theor.size(); ++i)
+        t.push_back(exp);
+
+    return Calc::dy(t, theor);
+}
+
+double Calc::dy(const double exp, const double theor)
+{
+    return Calc::dy(std::vector({exp}), std::vector({theor}));
 }
 
 double Calc::deltaCoeffA(const std::vector<double>& x, const double dy)
