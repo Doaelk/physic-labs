@@ -47,7 +47,7 @@ void Lab2::calculateLab()
     calcLab->Ri = std::abs(Calc::coeffA(I, U));
     //calcLab->Re = expLab->U0 - calcLab->Ia * calcLab->Ri;
     calcLab->ShCr = expLab->U0/calcLab->Ri;
-    calcLab->P0 = expLab->U0*calcLab->ShCr;
+    calcLab->P0 = expLab->U0*calcLab->Ia;
     calcLab->Pi = calcLab->Ia*calcLab->Ia*calcLab->Ri;
     calcLab->Eff = (calcLab->P0-calcLab->Pi)/calcLab->P0;
 
@@ -59,7 +59,7 @@ void Lab2::calculateLab()
     //errorLab->Re = sqrt(pow(calcLab->Ri*errorLab->I, 2)+
     //                    pow(calcLab->Ia*errorLab->Ri, 2));
     errorLab->ShCr = std::abs(expLab->U0/pow(calcLab->Ri, 2)*errorLab->Ri);
-    errorLab->P0 = std::abs(expLab->U0*errorLab->ShCr);
+    errorLab->P0 = std::abs(expLab->U0*errorLab->I);
     errorLab->Pi = sqrt(pow(calcLab->Ia*calcLab->Ia*errorLab->Ri, 2)+
                         pow(2*pow(calcLab->Ia, 3)*calcLab->Ri*errorLab->I, 2));
     errorLab->Eff = sqrt(pow(errorLab->Pi/calcLab->P0, 2)+
